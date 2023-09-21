@@ -15,6 +15,11 @@ class CreateInvoicesTable extends Migration
     {
         Schema::create('invoices', function (Blueprint $table) {
             $table->id();
+            $table->integer('customer_id');
+            $table->integer('amount');
+            $table->string('status');
+            $table->dateTime('build_date');
+            $table->dateTime('paid_date')->nullable();
             $table->timestamps();
         });
     }
