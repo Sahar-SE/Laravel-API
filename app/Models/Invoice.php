@@ -7,5 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Invoice extends Model
 {
-    use HasFactory;
+  use HasFactory;
+
+  public function customer() {
+    return $this->belongsTo(Customer::class);
+  }
 }
