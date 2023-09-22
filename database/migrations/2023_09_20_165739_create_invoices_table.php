@@ -18,7 +18,7 @@ class CreateInvoicesTable extends Migration
             $table->integer('customer_id');
             $table->integer('amount');
             $table->string('status');
-            $table->dateTime('build_date');
+            $table->dateTime('billed_date');
             $table->dateTime('paid_date')->nullable();
             $table->timestamps();
         });
