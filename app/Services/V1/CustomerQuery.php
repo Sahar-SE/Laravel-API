@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class CustomerQuery  {
   // because user can write anything in input search so we have to allow specific columns to be searched
-  protected $allowedParams = [
+  protected $safeParams = [
     'name' => ['eq'],
     'type' => ['eq'],
     'email' => ['eq'],
@@ -30,7 +30,12 @@ class CustomerQuery  {
   ];
 
   public function transform(Request $request) {
-    
+    // eloquect query array
+    $eloQuery = [];
+
+    foreach ($this->safeParams as $param => $operators) {
+      $query = $request->query($param);
+    }
   }
   
 }
