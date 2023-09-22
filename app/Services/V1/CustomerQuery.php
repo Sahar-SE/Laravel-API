@@ -23,5 +23,14 @@ class CustomerQuery  {
     'postalCode' => 'postal_code'
   ];
 
-  protected
+  protected $opratorsMap = [
+    'eq' => '=',
+    'gt' => '>',
+    'lt' => '<'
+  ];
+
+  public function transform(Request $request) {
+    
+  }
+  
 }
