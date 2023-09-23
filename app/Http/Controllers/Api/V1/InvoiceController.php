@@ -20,7 +20,14 @@ class InvoiceController extends Controller
      */
     public function index()
     {
-      return new InvoiceCollection(Invoice::paginate());
+      $filter = new InvoiceFilter();
+      $queryItems = $filter->transform($request); //[['column', 'operator', 'value']]
+
+      if($queryItems ==  0){
+        return new CustomerCollection(Invoice::paginate());
+      } else {
+        return new CustomerCollection(Invoice::where($queryItems)->paginate());
+      }
     }
 
     /**
