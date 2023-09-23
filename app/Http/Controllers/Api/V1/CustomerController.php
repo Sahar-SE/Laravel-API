@@ -8,7 +8,8 @@ use App\Http\Requests\UpdateCustomerRequest;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\V1\CustomerResource;
 use App\Http\Resources\V1\CustomerCollection;
-use App\Services\CustomerQuery;
+use App\Services\V1\CustomerQuery;
+use Illuminate\Http\Request;
 
 class CustomerController extends Controller
 {
