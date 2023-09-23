@@ -6,7 +6,7 @@ namespace App\Filters;
 use Illuminate\Http\Request;
 
 
-class CustomerFilter extends ApiFilter {
+class ApiFilter {
   // because user can write anything in input search so we have to allow specific columns to be searched
   protected $safeParams = [
     'name' => ['eq'],
