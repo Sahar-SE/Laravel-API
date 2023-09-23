@@ -35,4 +35,11 @@ class StoreCustomerRequest extends FormRequest
             'postalCode' => ['required'],
         ];
     }
+
+    protected function prepareForValidation()
+    {
+        $this->merge([
+            'postal_code' => $this->postalCode,
+        ]);
+    }
 }
