@@ -5,7 +5,7 @@ namespace App\Filters\V1;
 use Illuminate\Http\Request;
 
 
-class CustomerQuery  {
+class CustomerFilter  {
   // because user can write anything in input search so we have to allow specific columns to be searched
   protected $safeParams = [
     'name' => ['eq'],
