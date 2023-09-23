@@ -28,8 +28,5 @@ class   InvoiceFilter extends ApiFilter {
     'gt' => '>',
     'lt' => '<',
     'ne' => '!='
-  ];
-
- 
-  
+  ]; 
 }
