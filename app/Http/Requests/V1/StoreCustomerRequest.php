@@ -24,7 +24,14 @@ class StoreCustomerRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            // Validation for front-end form
+            'name' => ['required'],
+            'type' => ['required', Rule::in(['individual', 'business', 'I', 'B', 'i', 'b'])],
+            'email' => ['required', 'email'],
+            'address' => ['required'],
+            'city' => ['required'],
+            'state' => ['required'],
+            'postalCode' => ['required'],
         ];
     }
 }
