@@ -32,10 +32,18 @@ class CustomerQuery  {
   public function transform(Request $request) {
     // eloquect query array
     $eloQuery = [];
-
+    // param is the field name
     foreach ($this->safeParams as $param => $operators) {
       $query = $request->query($param);
+
+      if(!isset($query)) {
+        continue;
+      }
+
+      $column = $this->columnMap[$param] ?? $param;
     }
+
+    return $eloQuery;
   }
   
 }
