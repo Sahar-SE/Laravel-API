@@ -18,15 +18,17 @@ class InvoiceController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
       $filter = new InvoiceFilter();
       $queryItems = $filter->transform($request); //[['column', 'operator', 'value']]
 
       if($queryItems ==  0){
-        return new CustomerCollection(Invoice::paginate());
+        return new InvoiceCollection(Invoice::paginate());
       } else {
-        return new CustomerCollection(Invoice::where($queryItems)->paginate());
+        $invoices = Invoice::where($queryItems)->paginate();
+        // To implement the filter in other pages of pagination we use append
+        return new InvoiceCollection($invoices->appends($request->query()));
       }
     }
 
