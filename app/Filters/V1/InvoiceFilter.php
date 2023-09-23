@@ -15,7 +15,7 @@ class   InvoiceFilter extends ApiFilter {
     'billedDate' => ['eq'],
     'paidDate' => ['eq', 'gt', 'lt'],
   ];
-  // Transform the fields to Db columns speciallly for postalCode because we have changed it to postalCode from postal_code
+  // Transform the fields to Db columns because we have changed it to postalCode from postal_code
 
   protected $columnMap = [
     'costomerId' => 'costomer_id',
