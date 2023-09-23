@@ -8,27 +8,12 @@ use Illuminate\Http\Request;
 
 class ApiFilter {
   // because user can write anything in input search so we have to allow specific columns to be searched
-  protected $safeParams = [
-    'name' => ['eq'],
-    'type' => ['eq'],
-    'email' => ['eq'],
-    'address' => ['eq'],
-    'city' => ['eq'],
-    'state' => ['eq'],
-    // postalCode equal to, greater than, less than
-    'postalCode' => ['eq', 'gt', 'lt'],
-  ];
+  protected $safeParams = [];
   // Transform the fields to Db columns speciallly for postalCode because we have changed it to postalCode from postal_code
 
-  protected $columnMap = [
-    'postalCode' => 'postal_code'
-  ];
+  protected $columnMap = [];
 
-  protected $opratorsMap = [
-    'eq' => '=',
-    'gt' => '>',
-    'lt' => '<'
-  ];
+  protected $opratorsMap = [];
 
   public function transform(Request $request) {
     // eloquect query array
