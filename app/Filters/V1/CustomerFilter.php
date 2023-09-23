@@ -3,6 +3,7 @@ namespace App\Filters\V1;
 
 // To access the Request we import it from Illuminate\Http\Request
 use Illuminate\Http\Request;
+use App\Filters\ApiFilter;
 
 
 class CustomerFilter extends ApiFilter {
