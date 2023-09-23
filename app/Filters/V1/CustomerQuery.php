@@ -1,5 +1,5 @@
 <?php
-namespace App\Services\V1;
+namespace App\Filters\V1;
 
 // To access the Request we import it from Illuminate\Http\Request
 use Illuminate\Http\Request;
