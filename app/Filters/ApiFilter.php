@@ -1,1 +1,3 @@
-namespace 
+<?php
+
+namespace App\Filters\ApiFilter;
