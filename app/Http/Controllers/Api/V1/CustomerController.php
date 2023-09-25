@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Api\V1;
 
 use App\Models\Customer;
 use App\Http\Requests\V1\StoreCustomerRequest;
-use App\Http\Requests\UpdateCustomerRequest;
+use App\Http\Requests\V1\UpdateCustomerRequest;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\V1\CustomerResource;
 use App\Http\Resources\V1\CustomerCollection;
