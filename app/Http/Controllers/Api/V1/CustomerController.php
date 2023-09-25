@@ -51,7 +51,7 @@ class CustomerController extends Controller
      */
     public function show(Customer $customer)
     {
-        return new CustomerResource($customer);
+      return new CustomerResource($customer);
     }
 
     /**
@@ -63,7 +63,7 @@ class CustomerController extends Controller
      */
     public function update(UpdateCustomerRequest $request, Customer $customer)
     {
-        //
+      
     }
 
     /**
