@@ -24,14 +24,21 @@ class UpdateCustomerRequest extends FormRequest
     public function rules()
     {
         return [
-             // Validation for front-end form
-             'name' => ['required'],
-             'type' => ['required', Rule::in(['individual', 'business', 'I', 'B', 'i', 'b'])],
-             'email' => ['required', 'email'],
-             'address' => ['required'],
-             'city' => ['required'],
-             'state' => ['required'],
-             'postalCode' => ['required'],
+            // Validation for front-end form
+            'name' => ['required'],
+            'type' => ['required', Rule::in(['individual', 'business','Individual', 'Business', 'I', 'B', 'i', 'b'])],
+            'email' => ['required', 'email'],
+            'address' => ['required'],
+            'city' => ['required'],
+            'state' => ['required'],
+            'postalCode' => ['required'],
         ];
+    }
+
+    protected function prepareForValidation()
+    {
+        $this->merge([
+            'postal_code' => $this->postalCode,
+        ]);
     }
 }
