@@ -23,16 +23,30 @@ class UpdateCustomerRequest extends FormRequest
      */
     public function rules()
     {
+      $method = $this->method();
+      if($method =='PUT') {
         return [
-            // Validation for front-end form
-            'name' => ['required'],
-            'type' => ['required', Rule::in(['individual', 'business','Individual', 'Business', 'I', 'B', 'i', 'b'])],
-            'email' => ['required', 'email'],
-            'address' => ['required'],
-            'city' => ['required'],
-            'state' => ['required'],
-            'postalCode' => ['required'],
+          // Validation for front-end form
+          'name' => ['required'],
+          'type' => ['required', Rule::in(['individual', 'business','Individual', 'Business', 'I', 'B', 'i', 'b'])],
+          'email' => ['required', 'email'],
+          'address' => ['required'],
+          'city' => ['required'],
+          'state' => ['required'],
+          'postalCode' => ['required'],
         ];
+      } else {
+        return [
+          // Validation for front-end form
+          'name' => ['sometimes', 'required'],
+          'type' => ['sometimes', 'required', Rule::in(['individual', 'business','Individual', 'Business', 'I', 'B', 'i', 'b'])],
+          'email' => ['sometimes', 'required', 'email'],
+          'address' => ['sometimes', 'required'],
+          'city' => ['sometimes', 'required'],
+          'state' => ['sometimes', 'required'],
+          'postalCode' => ['sometimes', 'required'],
+        ];
+      }
     }
 
     protected function prepareForValidation()
