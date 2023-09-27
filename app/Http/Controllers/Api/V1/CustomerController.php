@@ -37,7 +37,6 @@ class CustomerController extends Controller
       return new CustomerResource(Customer::create($request->all()));
     }
 
-
     public function show(Customer $customer)
     {
       return new CustomerResource($customer);
